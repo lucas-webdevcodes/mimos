@@ -615,3 +615,28 @@ renderTudo();
 </script>
 </body>
 </html>
+<!-- FIREBASE (ADMIN) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<script>
+  firebase.initializeApp({
+    databaseURL: "https://pastel-coruripe-default-rtdb.firebaseio.com"
+  });
+
+  const db = firebase.database();
+
+  // DESATIVAR COMBO X-TUDO
+  function desativarComboXtudo() {
+    db.ref("combos").update({
+      combo_xtudo: "off"
+    });
+  }
+
+  // ATIVAR COMBO X-TUDO
+  function ativarComboXtudo() {
+    db.ref("combos").update({
+      combo_xtudo: "on"
+    });
+  }
+</script>
